@@ -1,3 +1,7 @@
+body, pre {
+    margin: 0;
+}
+
 pre {
     -webkit-transform-origin:top left;
     transform-origin:top left;
