@@ -1,6 +1,6 @@
 pre {
     -webkit-transform-origin:top left;
     transform-origin:top left;
-    -webkit-transform:scale(0.5);
-    transform:scale(0.5);
+    -webkit-transform:scale(0.3, 0.3);
+    transform:scale(0.3, 0.3);
 }
