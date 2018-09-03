@@ -1,10 +1,46 @@
-body, pre {
-    margin: 0;
+header {
+    width: 100%;
+    background: #f2f3f4;
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 15px;
 }
 
-pre {
-    -webkit-transform-origin:top left;
-    transform-origin:top left;
-    -webkit-transform:scale(0.3, 0.3);
-    transform:scale(0.3, 0.3);
+nav, article {
+    min-width: 1200px;
+    width: 80%;
+    margin: auto;
+}
+
+nav a {
+    margin-right: 10px;
+}
+
+article {
+    height: auto;
+    overflow: hidden;
+}
+
+article aside {
+    width: 20%;
+    float: left;
+    border: 2px solid rgba(210, 211, 212, 0.4);
+    border-radius: 4%;
+    box-sizing: border-box;
+}
+
+article .mainContent {
+    width: 78%;
+    float: left;
+    padding: 15px 20px;
+    line-height: 1.5;
+    border: 2px solid rgba(210, 211, 212, 0.4);
+    border-radius: 1%;
+    min-height: 1000px;
+    box-sizing: border-box;
+}
+
+footer {
+    margin-top: 15px;
+    min-height: 300px;
 }
