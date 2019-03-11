@@ -222,7 +222,7 @@
       '''''''''''''''''';;;;;;:::::::,,,,,,,,,,,,.........`..;,:;+#######+';;::::######'';,::,,,:+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;'++''''''''''''''''+'+'++++++++++++++++++++++++
     </pre>
     <script>
-        window.parent.postMessage(JSON.stringify({height: '1000px'}),"*");
+        window.parent.postMessage(JSON.stringify({height: (document.documentElement.scrollHeight || document.body.scrollHeight) + 'px'}),"*");
     </script>
 </body>
 </html>
