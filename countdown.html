@@ -16,7 +16,6 @@
         var today = new Date();
         var date = today.getFullYear()+"/"+(today.getMonth()+1)+"/"+today.getDate();
         var c = new Date(date +" 18:00:00").getTime();
-        console.log(date, new Date(date +" 18:00:00"), c)
         
         var showTime = document.getElementById('showTime');
         var message = document.getElementById('message');
@@ -44,6 +43,8 @@
                 alert("进入最好一分钟了哦！");
             } else if(s == 10){
                 alert("跟我一起倒数十秒钟！");
+            } else if(s < 10){
+                message.innerHTML= s+ '秒';
             }
             // console.log("现在距离下班还有%s秒, %s分, %s小时", s, m, h);
             document.getElementById('seconds').innerHTML = s;
