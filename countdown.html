@@ -5,25 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>count down</title>
 </head>
 <body>
     <div>
-        <h3>现在距离下班还有<span id="seconds"></span>秒, <span id="minutes"></span>分,<span id="hours"></span>小时</h3>
+        <h3 id="showTime">现在距离下班还有<span id="seconds"></span>秒, <span id="minutes"></span>分,<span id="hours"></span>小时</h3>
+        <span id=message></span>
     </div>
     <script>
-        var c = new Date("2019/07/02 18:00:00").getTime();
+        var today = new Date();
+        var date = today.getFullYear()+"/"+(today.getMonth()+1)+"/"+today.getDate();
+        var c = new Date(date +" 18:00:00").getTime();
+        console.log(date, new Date(date +" 18:00:00"), c)
+        
+        var showTime = document.getElementById('showTime');
+        var message = document.getElementById('message');
+
         function consoleTime() {
             var now = new Date().getTime();
+            if(c - now < 0) {
+                clearInterval(interval);
+                showTime.style.display = 'none';
+                message.innerHTML='下班了，别忘了带好东西哦！';
+                return;
+            }
             var s =parseInt((c - now) / 1000);
             var m =parseInt((c - now) / 60000);
             var h =parseInt((c - now) / 3600000);
-            console.log("现在距离下班还有%s秒, %s分, %s小时", s, m, h);
+            if(s == 3600) {
+                alert("距离下班只剩下一小时了哦！");
+            } else if(s == 1800){
+                alert("距离下班只剩下半小时了哦！");
+            } else if(s == 600){
+                alert("距离下班只剩下十分钟了哦！");
+            } else if(s == 300){
+                alert("距离下班只剩下五分钟了哦！");
+            } else if(s == 60){
+                alert("进入最好一分钟了哦！");
+            } else if(s == 10){
+                alert("跟我一起倒数十秒钟！");
+            }
+            // console.log("现在距离下班还有%s秒, %s分, %s小时", s, m, h);
             document.getElementById('seconds').innerHTML = s;
             document.getElementById('minutes').innerHTML = m;
             document.getElementById('hours').innerHTML = h;
         }
-        setInterval(consoleTime, 1000);
+        var interval = setInterval(consoleTime, 1000);
     </script>
 </body>
 
