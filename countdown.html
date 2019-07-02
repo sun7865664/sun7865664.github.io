@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>现在距离下班还有<span id="seconds"></span>秒, <span id="minutes"></span>分,<span id="hours"></span>小时</h3>
+    </div>
+    <script>
+        var c = new Date("2019/07/02 18:00:00").getTime();
+        function consoleTime() {
+            var now = new Date().getTime();
+            var s =parseInt((c - now) / 1000);
+            var m =parseInt((c - now) / 60000);
+            var h =parseInt((c - now) / 3600000);
+            console.log("现在距离下班还有%s秒, %s分, %s小时", s, m, h);
+            document.getElementById('seconds').innerHTML = s;
+            document.getElementById('minutes').innerHTML = m;
+            document.getElementById('hours').innerHTML = h;
+        }
+        setInterval(consoleTime, 1000);
+    </script>
+</body>
+
+</html>
