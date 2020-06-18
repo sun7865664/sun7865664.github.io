@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com/blog">
-  <title>Archives: 2020 | 孙龙的博客</title>
+  <title>江北服务器迁移文档 | 孙龙的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="孙龙的博客">
-<meta property="og:url" content="http://yoursite.com/blog/archives/2020/index.html">
+  <meta name="description" content="一、迁移业务梳理1、221上需要迁移的服务： 江北管理台：jiangbei-es 江北企业服务前台网站：Bep-WebPortal-Dev 江北重大项目appH5页面：jiangbei-mobile 江北对外接口服务：jiangbei-app-server 江北用户鉴权服务：oauth2-server 调查问卷：diaowen  2、基础服务：1redis，node，mysql，java 3、数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="江北服务器迁移文档">
+<meta property="og:url" content="http://yoursite.com/blog/2020/06/18/%E6%B1%9F%E5%8C%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%81%E7%A7%BB%E6%96%87%E6%A1%A3/index.html">
 <meta property="og:site_name" content="孙龙的博客">
+<meta property="og:description" content="一、迁移业务梳理1、221上需要迁移的服务： 江北管理台：jiangbei-es 江北企业服务前台网站：Bep-WebPortal-Dev 江北重大项目appH5页面：jiangbei-mobile 江北对外接口服务：jiangbei-app-server 江北用户鉴权服务：oauth2-server 调查问卷：diaowen  2、基础服务：1redis，node，mysql，java 3、数据">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-18T08:22:44.000Z">
+<meta property="article:modified_time" content="2020-06-18T09:15:33.861Z">
 <meta property="article:author" content="孙龙">
 <meta name="twitter:card" content="summary">
   
@@ -150,76 +154,202 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-江北服务器迁移文档" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      江北服务器迁移文档
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/blog/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2020/06/18/%E6%B1%9F%E5%8C%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%81%E7%A7%BB%E6%96%87%E6%A1%A3/" class="archive-article-date">
+
+        
+        <a href="/blog/2020/06/18/%E6%B1%9F%E5%8C%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%81%E7%A7%BB%E6%96%87%E6%A1%A3/" class="archive-article-date">
   	<time datetime="2020-06-18T08:22:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/06/18/%E6%B1%9F%E5%8C%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%81%E7%A7%BB%E6%96%87%E6%A1%A3/">江北服务器迁移文档</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、迁移业务梳理"><a href="#一、迁移业务梳理" class="headerlink" title="一、迁移业务梳理"></a>一、迁移业务梳理</h3><h4 id="1、221上需要迁移的服务："><a href="#1、221上需要迁移的服务：" class="headerlink" title="1、221上需要迁移的服务："></a>1、221上需要迁移的服务：</h4><ul>
+<li>江北管理台：jiangbei-es</li>
+<li>江北企业服务前台网站：Bep-WebPortal-Dev</li>
+<li>江北重大项目appH5页面：jiangbei-mobile</li>
+<li>江北对外接口服务：jiangbei-app-server</li>
+<li>江北用户鉴权服务：oauth2-server</li>
+<li>调查问卷：diaowen</li>
+</ul>
+<h4 id="2、基础服务："><a href="#2、基础服务：" class="headerlink" title="2、基础服务："></a>2、基础服务：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis，node，mysql，java</span><br></pre></td></tr></table></figure>
+<h4 id="3、数据库服务"><a href="#3、数据库服务" class="headerlink" title="3、数据库服务"></a>3、数据库服务</h4><ul>
+<li>企业服务数据库：jiangbei-es</li>
+<li>用户鉴权服务数据库：oauth2-jiangbei</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">全权限帐号：jiangbei</span><br><span class="line">密码：****</span><br></pre></td></tr></table></figure>
+<h4 id="4、上传文件迁移"><a href="#4、上传文件迁移" class="headerlink" title="4、上传文件迁移"></a>4、上传文件迁移</h4><h5 id="4-1-项目上传文件"><a href="#4-1-项目上传文件" class="headerlink" title="4.1 项目上传文件"></a>4.1 项目上传文件</h5><ul>
+<li>申报过程中和项目进度中的一些上传文件, 数据量比较大<blockquote>
+<p><code>/data/jiangbei/upload_file   117G</code><br> <code>/jiangbeidata/upload_file     95G</code></p>
+</blockquote>
+</li>
+<li>拷贝命令:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scp -r -P 1022 &#x2F;data&#x2F;jiangbei&#x2F;upload_file root@58.240.255.107:&#x2F;jiangbeidata&#x2F;</span><br><span class="line">scp -r -P 1022 &#x2F;jiangbeidata&#x2F;upload_file root@58.240.255.107:&#x2F;jiangbeidata&#x2F;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>建议分目录拷贝，文件较多拷贝时间长，窗口会超时关闭</p>
+</blockquote>
+</li>
+</ul>
+<h5 id="4-2-富文本框附件"><a href="#4-2-富文本框附件" class="headerlink" title="4.2 富文本框附件"></a>4.2 富文本框附件</h5><ul>
+<li>富文本框附件路径： NaN/src/main/webapp/userfiles，拷贝到迁移服务器的对应目录下即可</li>
+</ul>
+<h5 id="4-3-修改附件目录的所有权"><a href="#4-3-修改附件目录的所有权" class="headerlink" title="4.3 修改附件目录的所有权"></a>4.3 修改附件目录的所有权</h5><p>修改上传目录的权限：<br><code>chown -R dbuser01:dbuser01 /jiangbeidata/upload_file/</code></p>
+<h3 id="二、扩展服务器硬盘"><a href="#二、扩展服务器硬盘" class="headerlink" title="二、扩展服务器硬盘"></a>二、扩展服务器硬盘</h3><ul>
+<li>挂载硬盘<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1、fdisk -l   &#x2F;&#x2F;列出所有分区</span><br><span class="line">2、挂载新硬盘</span><br><span class="line">  2.1、fdisk &#x2F;dev&#x2F;vda </span><br><span class="line">     n            &#x2F;&#x2F;新建新分区</span><br><span class="line">     p            &#x2F;&#x2F;选择分区类型  p主分区</span><br><span class="line">     起始 扇区 (2048-41943039，默认为 2048)：419430400   </span><br><span class="line">     Last 扇区, +扇区 or +size&#123;K,M,G&#125; (2048-41943039，默认为 41943039)：          &#x2F;&#x2F;默认回车</span><br><span class="line">     p           &#x2F;&#x2F;查询分区是否创建成功</span><br><span class="line">     w           &#x2F;&#x2F;#保存退出</span><br><span class="line">   2.2、重启服务器</span><br><span class="line">     reboot</span><br><span class="line">   2.3、创建物理卷， </span><br><span class="line">     pvcreate &#x2F;dev&#x2F;vda4</span><br><span class="line">     查看新建的物理卷和大小，使用pvdisplay命令。</span><br><span class="line">   2.4、格式化硬盘</span><br><span class="line">     mkfs -t ext3 &#x2F;dev&#x2F;vda4</span><br><span class="line">   2.5、挂载目录</span><br><span class="line">     mkdir &#x2F;jiangbeidata</span><br><span class="line">     mount &#x2F;dev&#x2F;vda4 &#x2F;jiangbeidata</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>其中扇区位置在划分新分区要特别注意</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="三、数据库迁移"><a href="#三、数据库迁移" class="headerlink" title="三、数据库迁移"></a>三、数据库迁移</h3><h4 id="1-数据库导出"><a href="#1-数据库导出" class="headerlink" title="1.数据库导出"></a>1.数据库导出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -h127.0.0.1 -u[user] -p***** jiangbei-es &gt; sqlfile2.sql</span><br><span class="line">mysqldump -h127.0.0.1 -u[user] -p***** oauth2-jiangbei &gt; sqlfile2.sql</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="2-数据库导入"><a href="#2-数据库导入" class="headerlink" title="2.数据库导入"></a>2.数据库导入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql -h192.168.135.102 -u[user] -p***** jiangbei-es &lt; sqlfile2.sql</span><br><span class="line">mysql -h192.168.135.102 -u[user] -p***** oauth2-jiangbei &lt; sqlfile2.sql</span><br></pre></td></tr></table></figure>
+<h4 id="3-解决数据库视图权限问题"><a href="#3-解决数据库视图权限问题" class="headerlink" title="3.解决数据库视图权限问题"></a>3.解决数据库视图权限问题</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;增加不限ip的数据库访问用户</span><br><span class="line">create user &#39;[user]&#39;@&#39;%&#39; identified by &#39;*****&#39;;</span><br></pre></td></tr></table></figure>
+<h4 id="4-解决mysql大小写敏感问题"><a href="#4-解决mysql大小写敏感问题" class="headerlink" title="4.解决mysql大小写敏感问题"></a>4.解决mysql大小写敏感问题</h4><ul>
+<li>查看数据库中的大小写敏感信息<br><code>show global variables like &#39;%lower_case%&#39;; //查看mysql大小写敏感</code></li>
+<li>修改docker容器中的mysql配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.拷贝容器里的mysql配置文件到本机</span><br><span class="line">docker cp  e5dcc122860f:&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;mysqld.cnf .</span><br><span class="line">2.修改mysql配置文件</span><br><span class="line">vi mysqld.cnf</span><br><span class="line">lower_case_table_names&#x3D;1</span><br><span class="line">3.将修改后的配置文件拷贝到容器里替换</span><br><span class="line">docker cp mysqld.cnf  e5dcc122860f:&#x2F;etc&#x2F;mysql&#x2F;mysql.conf.d&#x2F;</span><br><span class="line">4.重启mysql容器</span><br><span class="line">docker restart e5dcc122860f</span><br></pre></td></tr></table></figure>
 
+
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/blog/2020/06/18/%E6%B1%9F%E5%8C%97%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%81%E7%A7%BB%E6%96%87%E6%A1%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/blog/2020/06/18/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-18T06:33:03.327Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/blog/2020/06/18/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/blog/2020/06/18/hello-world/">Hello World</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
