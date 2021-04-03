@@ -27,6 +27,34 @@
 
 
         function showRecords(){
+            var recordStr=localStorage.getItem("recordList");
+            var recordList;
+            if(!recordStr) {
+                recordList = JSON.parse(recordStr);
+            } else {
+                recordList=[];
+            }
+
+            var  cardNo = getUrlPrams(cardNo);
+            if(cardNo) {
+                recordList.push({
+                    cardNo: cardNo,
+                    time: formateTime(new Date())
+                })
+
+                localStorage.setItem("recordList", JSON.stringify(recordList));
+            }
+
+            var recordBox = document.querySelector("#record-box");
+
+            for(var i=0; i<recordList.length; i++) {
+                var r= recordList[i];
+                var node = document.createElement("P");
+                var textnode = document.createTextNode(r.cardNo + "-" + r.time);
+                node.appendChild(textnode);
+                recordBox.appendChild(node);
+            }
+
             
         }
 
