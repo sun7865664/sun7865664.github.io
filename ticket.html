@@ -26,6 +26,8 @@
         .box{
             /* background: #abb9c5; */
             width:100%;
+            max-width: 460px;
+            min-width: 320px;
             height:100%;
             transition:all 1s;
             transform-style: preserve-3d;
@@ -46,6 +48,9 @@
             /* line-height: 200px; */
 
             backface-visibility: hidden;
+            -webkit-backface-visibility:hidden;	/* Chrome 和 Safari */
+            -moz-backface-visibility:hidden; 	/* Firefox */
+            -ms-backface-visibility:hidden; 	/* Internet Explorer */
         }
 
         .back{
