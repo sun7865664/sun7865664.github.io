@@ -17,7 +17,7 @@
         function syncTime(){
             var timeP = document.querySelector("#timeP");
             setInterval(function(){
-                timeP.innerHTML= "当前时间：" + formateTime(new Date());
+                timeP.innerHTML= "你好，当前时间：" + formateTime(new Date());
             },1000);
         }
         
@@ -46,11 +46,17 @@
             }
 
             var recordBox = document.querySelector("#record-box");
+            var h3 = document.createElement("h3");
+            var text = document.createTextNode("会员消费记录");
+            h3.appendChild(h3);
+            recordBox.appendChild(h3);
+
+            recordBox.appendChild();
 
             for(var i=0; i<recordList.length; i++) {
                 var r= recordList[i];
                 var node = document.createElement("P");
-                var textnode = document.createTextNode(r.cardNo + "-" + r.time);
+                var textnode = document.createTextNode("会员：" +r.cardNo + ", 消费时间：" + r.time);
                 node.appendChild(textnode);
                 recordBox.appendChild(node);
             }
