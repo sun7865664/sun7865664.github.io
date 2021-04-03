@@ -29,11 +29,9 @@
         function showRecords(){
             var recordStr=localStorage.getItem("recordList");
             var recordList;
-            if(!recordStr) {
+            if(recordStr) {
                 recordList = JSON.parse(recordStr);
-            }
-
-            if (!recordList) {
+            } else {
                 recordList=[];
             }
 
