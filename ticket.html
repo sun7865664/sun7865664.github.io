@@ -8,6 +8,7 @@
         *{
             padding: 0;
             margin: 0;
+            font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,PingFang SC,Microsoft YaHei,Source Han Sans SC,Noto Sans CJK SC,WenQuanYi Micro Hei,sans-serif;
         }
 
         /* body{
@@ -82,7 +83,7 @@
             width: 100%;
             height: 240px;
             margin: auto;
-            border: 4px double gold;
+            border: 4px double #c7bbb4;
             border-radius: 5px;
             display: table;
             text-align: center;
@@ -102,18 +103,15 @@
             position: absolute;
             left: 10px;
             top: 5px;
-            font-family: fantasy;
         }
         .card-home .right-box {
             position: absolute;
             right: 10px;
             top: 5px;
-            font-family: fantasy;
         }
         .card-home .bottomtext {
             color: floralwhite;
             font-size: 16px;
-            font-family: cursive;
         }
         .card-home .right-bottom {
             position: absolute;
@@ -123,8 +121,11 @@
         .card-back .toptitle {
             text-align: center;
             font-size: 18px;
-            font-family: fantasy;
             color: floralwhite;
+        }
+        .card-back .content {
+            position: relative;
+            z-index: 2;
         }
         .card-back .content-box {
             padding: 0 15px;
@@ -149,6 +150,8 @@
             left: 0;
             right: 0;
             margin: auto;
+            border-radius: 8px;
+            border: 1px solid floralwhite;
         }
         .card-back .text-box {
             width: 70%;
@@ -164,6 +167,16 @@
             text-align: left;
          }
 
+         .blur_bj_gray {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            background: rgba(24,20,24,.7);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
     </style>
 </head>
 <body>
@@ -178,7 +191,7 @@
                     <div class="toptext left-box">L&S HOME</div>
                     <div class="toptext right-box">Exclusive to Tingting</div>
                     <div class="bottomtext right-bottom">NO: 88888888</div>
-                    <span class="viptext">VIP</span>
+                    <!-- <span class="viptext">VIP</span> -->
                 </div>
             </div>
         </div>
@@ -200,6 +213,7 @@
                     </div>
                 </div>
             </div>
+            <div class="blur_bj_gray"></div>
         </div>
     </div>
 </div>
