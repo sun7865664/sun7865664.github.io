@@ -31,7 +31,9 @@
             var recordList;
             if(!recordStr) {
                 recordList = JSON.parse(recordStr);
-            } else {
+            }
+
+            if (!recordList) {
                 recordList=[];
             }
 
