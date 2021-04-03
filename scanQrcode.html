@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <title>vip  scan record</title>
+</head>
+<body>
+    <h1>VIP 消费记录</h1>
+    <p id="timeP"></p>
+    <div id="record-box"></div>
+    <script>
+        function formateTime(time) {
+            return  time.getFullYear() + "年" + (time.getMonth() + 1) + "月" + time.getDate() + "日" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        }
+
+        function syncTime(){
+            var timeP = document.querySelector("#timeP");
+            setInterval(function(){
+                timeP.innerHTML= "当前时间：" + formateTime(new Date());
+            },1000);
+        }
+        
+        function getUrlPrams(key){
+            return window.location.toString().match(new RegExp('(&|/?)' + key + '=([^&]*)', 'i'))[2];
+        }
+
+
+        function showRecords(){
+            
+        }
+
+
+        syncTime();
+        
+
+    </script>
+</body>
+</html>
