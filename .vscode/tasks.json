@@ -11,13 +11,13 @@
         {
             "label": "Git pull",
             "type": "shell",
-            "command": "git pull --rebase"
+            "command": "git pull"
         },
         {
             "label": "Run development",
             "command": "chrome",
             "windows": {
-                "command": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+                "command": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
             },
             "args": ["${workspaceFolder}/index.html"]
         },
