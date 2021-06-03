@@ -176,13 +176,13 @@
 
 </li>
 </ul>
-<p><img src="./mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE/1.png" alt="Image text"></p>
+<p><img src="./1.png" alt="Image text"></p>
 <p>2、从数据库执行命令</p>
 <ul>
 <li>配置从服务器关于主服务器的信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">change master to master_host&#x3D;&#39;192.168.0.152&#39;, master_user&#x3D;&#39;root&#39;,master_password&#x3D;&#39;123456&#39;,master_port&#x3D;3307,master_log_file&#x3D;&#39;mysql-bin.000001&#39;,master_log_pos&#x3D;613;</span><br></pre></td></tr></table></figure></li>
 <li>开始主从复制<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start slave;</span><br></pre></td></tr></table></figure></li>
 <li>查看主从复制的状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show slave status\G;</span><br></pre></td></tr></table></figure>
-<img src="./mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE/2.png" alt="Image text"></li>
+<img src="./2.png" alt="Image text"></li>
 </ul>
 
       
