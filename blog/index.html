@@ -242,7 +242,7 @@
         <h4 id="访问者模式"><a href="#访问者模式" class="headerlink" title="访问者模式"></a>访问者模式</h4><blockquote>
 <p>访问者模式的设计初衷是为了将稳定的数据结构和对数据结构的变化多端的操作解耦,可以让设计者针对同一套数据结构自由地设计操作集合。访问者模式的结构图如下，</p>
 </blockquote>
-<p><img src="./image-20210818092730266.png" alt="image-20210818092730266"></p>
+<p><img src="/blog/2021/10/18/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/image-20210818092730266.png" alt="image-20210818092730266"></p>
 <blockquote>
 <p>访问者模式一般有抽象访问者、具体访问者、抽象节点元素、机构对象和客户端几种角色</p>
 </blockquote>
@@ -417,13 +417,13 @@
 
 </li>
 </ul>
-<p><img src="./1.png" alt="Image text"></p>
+<p><img src="/blog/2021/06/03/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE/1.png" alt="Image text"></p>
 <p>2、从数据库执行命令</p>
 <ul>
 <li>配置从服务器关于主服务器的信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">change master to master_host&#x3D;&#39;192.168.0.152&#39;, master_user&#x3D;&#39;root&#39;,master_password&#x3D;&#39;123456&#39;,master_port&#x3D;3307,master_log_file&#x3D;&#39;mysql-bin.000001&#39;,master_log_pos&#x3D;613;</span><br></pre></td></tr></table></figure></li>
 <li>开始主从复制<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">start slave;</span><br></pre></td></tr></table></figure></li>
 <li>查看主从复制的状态<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show slave status\G;</span><br></pre></td></tr></table></figure>
-<img src="./2.png" alt="Image text"></li>
+<img src="/blog/2021/06/03/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE/2.png" alt="Image text"></li>
 </ul>
 
       
