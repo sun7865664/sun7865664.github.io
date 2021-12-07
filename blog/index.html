@@ -144,6 +144,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-centos安装ftp服务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/blog/2021/12/07/centos%E5%AE%89%E8%A3%85ftp%E6%9C%8D%E5%8A%A1/">centos安装ftp服务</a>
+    </h1>
+  
+
+        
+        <a href="/blog/2021/12/07/centos%E5%AE%89%E8%A3%85ftp%E6%9C%8D%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2021-12-07T06:53:56.800Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="centos安装ftp服务"><a href="#centos安装ftp服务" class="headerlink" title="centos安装ftp服务"></a>centos安装ftp服务</h3><h4 id="1、安装vsftpd服务"><a href="#1、安装vsftpd服务" class="headerlink" title="1、安装vsftpd服务"></a>1、安装vsftpd服务</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum intall -y vsftpd</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、核心配置文件"><a href="#2、核心配置文件" class="headerlink" title="2、核心配置文件"></a>2、核心配置文件</h4><ul>
+<li>/etc/vsftpd</li>
+<li>/var/ftp</li>
+</ul>
+<h5 id="2-1、-etc-vsftpd目录下面有4个文件"><a href="#2-1、-etc-vsftpd目录下面有4个文件" class="headerlink" title="2.1、/etc/vsftpd目录下面有4个文件"></a>2.1、/etc/vsftpd目录下面有4个文件</h5><ul>
+<li>ftpusers文件，指定哪些用户不能访问ftp服务</li>
+<li>user_list文件，用户列表，当vsftpd.conf里userlist_deny=NO时，只允许这里的用户访问ftp服务，注意此时同事也检测ftpusers文件；当vsftpd.conf里userlist_deny=YES（默认）时，不允许这里的用户访问ftp服务</li>
+<li>vsftpd.conf文件，是vsftp的核心配置文件</li>
+<li>Vsftpd_conf_migrate.sh文件，是vsftpd操作的一些变量和设置脚本</li>
+</ul>
+<h5 id="2-2、-var-ftp目录"><a href="#2-2、-var-ftp目录" class="headerlink" title="2.2、/var/ftp目录"></a>2.2、/var/ftp目录</h5><blockquote>
+<p>/var/ftp目录是默认情况下，匿名用户的根目录，也就是说默认情况下，匿名用户上传的文件将会放在这个目录下。</p>
+</blockquote>
+<h5 id="2-3、核心配置文件的基础配置项"><a href="#2-3、核心配置文件的基础配置项" class="headerlink" title="2.3、核心配置文件的基础配置项"></a>2.3、核心配置文件的基础配置项</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">anonymous_enable=YES   <span class="comment">#是否允许匿名登录</span></span><br><span class="line">local_enable=YES  <span class="comment">#是否云讯本地账号（系统账号）登录</span></span><br><span class="line">write_enable=YES  <span class="comment">#是否运行上传操作，如果要运行上传需要开启这个配置</span></span><br><span class="line">listen=NO  <span class="comment">#ftp服务的运行模式，NO时表示xinetd模式，YES时表示standlone模式</span></span><br><span class="line">userlist_enable=YES <span class="comment">#控制user_list的功能</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="3、服务控制"><a href="#3、服务控制" class="headerlink" title="3、服务控制"></a>3、服务控制</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl start vsftpd   <span class="comment">#开启vsftpd服务</span></span><br><span class="line">systemctl stop vsftpd  <span class="comment">#停止vsftpd服务</span></span><br><span class="line">systemctl restart vsftpd  <span class="comment">#重启vsftpd服务</span></span><br><span class="line">systemctl status vsftpd  <span class="comment">#查看vsftpd服务状态</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="4、ftp测试"><a href="#4、ftp测试" class="headerlink" title="4、ftp测试"></a>4、ftp测试</h4><ul>
+<li>filezilla等ftp工具配置</li>
+<li>ftp命令</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/blog/2021/12/07/centos%E5%AE%89%E8%A3%85ftp%E6%9C%8D%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-iptables设置" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -949,71 +1034,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/blog/2020/06/18/%E6%9C%8D%E5%8A%A1%E5%99%A8%E8%BF%81%E7%A7%BB%E6%96%87%E6%A1%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-2019-05-14-java知识点整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/blog/2019/05/14/2019-05-14-java%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">java知识点整理</a>
-    </h1>
-  
-
-        
-        <a href="/blog/2019/05/14/2019-05-14-java%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2019-05-14T08:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="java知识点整理"><a href="#java知识点整理" class="headerlink" title="java知识点整理"></a>java知识点整理</h1><h2 id="一、java-se基础"><a href="#一、java-se基础" class="headerlink" title="一、java se基础"></a>一、java se基础</h2><h3 id="1、面向对象"><a href="#1、面向对象" class="headerlink" title="1、面向对象"></a>1、面向对象</h3><p><code>面向对象的五大基本原则</code></p>
-<h3 id="2、数据类型"><a href="#2、数据类型" class="headerlink" title="2、数据类型"></a>2、数据类型</h3><p>222222222222222222</p>
-<h3 id="3、集合"><a href="#3、集合" class="headerlink" title="3、集合"></a>3、集合</h3><p>333333333333</p>
-<h4 id="3-1、List"><a href="#3-1、List" class="headerlink" title="3.1、List"></a>3.1、List</h4><h4 id="3-2、set"><a href="#3-2、set" class="headerlink" title="3.2、set"></a>3.2、set</h4><h4 id="3-3、map"><a href="#3-3、map" class="headerlink" title="3.3、map"></a>3.3、map</h4><h4 id="3-4、queue"><a href="#3-4、queue" class="headerlink" title="3.4、queue"></a>3.4、queue</h4><h4 id="3-5、stack"><a href="#3-5、stack" class="headerlink" title="3.5、stack"></a>3.5、stack</h4><h3 id="4、io"><a href="#4、io" class="headerlink" title="4、io"></a>4、io</h3><h3 id="5、线程"><a href="#5、线程" class="headerlink" title="5、线程"></a>5、线程</h3><h2 id="二、java-web"><a href="#二、java-web" class="headerlink" title="二、java web"></a>二、java web</h2><h3 id="1、开发框架"><a href="#1、开发框架" class="headerlink" title="1、开发框架"></a>1、开发框架</h3><h4 id="1-1、spring"><a href="#1-1、spring" class="headerlink" title="1.1、spring"></a>1.1、spring</h4><h5 id="1-1-1、spring-mvc"><a href="#1-1-1、spring-mvc" class="headerlink" title="1.1.1、spring mvc"></a>1.1.1、spring mvc</h5><h5 id="1-1-2、spring-boot"><a href="#1-1-2、spring-boot" class="headerlink" title="1.1.2、spring boot"></a>1.1.2、spring boot</h5><h5 id="1-1-3、spring-cloud"><a href="#1-1-3、spring-cloud" class="headerlink" title="1.1.3、spring  cloud"></a>1.1.3、spring  cloud</h5><h4 id="1-2、hibernate"><a href="#1-2、hibernate" class="headerlink" title="1.2、hibernate"></a>1.2、hibernate</h4><h4 id="1-3、mybatis"><a href="#1-3、mybatis" class="headerlink" title="1.3、mybatis"></a>1.3、mybatis</h4><h4 id="1-4、struts2"><a href="#1-4、struts2" class="headerlink" title="1.4、struts2"></a>1.4、struts2</h4><h4 id="1-5、jetty"><a href="#1-5、jetty" class="headerlink" title="1.5、jetty"></a>1.5、jetty</h4><h4 id="1-6、freemaker"><a href="#1-6、freemaker" class="headerlink" title="1.6、freemaker"></a>1.6、freemaker</h4><h3 id="2、http协议"><a href="#2、http协议" class="headerlink" title="2、http协议"></a>2、http协议</h3><h3 id="3、网络编程"><a href="#3、网络编程" class="headerlink" title="3、网络编程"></a>3、网络编程</h3><h4 id="3-1、socket"><a href="#3-1、socket" class="headerlink" title="3.1、socket"></a>3.1、socket</h4><h4 id="3-2、websocket"><a href="#3-2、websocket" class="headerlink" title="3.2、websocket"></a>3.2、websocket</h4><h3 id="4、定时器"><a href="#4、定时器" class="headerlink" title="4、定时器"></a>4、定时器</h3><h3 id="5、工作流"><a href="#5、工作流" class="headerlink" title="5、工作流"></a>5、工作流</h3><h3 id="6、鉴权机制"><a href="#6、鉴权机制" class="headerlink" title="6、鉴权机制"></a>6、鉴权机制</h3><h4 id="6-1、oauth2"><a href="#6-1、oauth2" class="headerlink" title="6.1、oauth2"></a>6.1、oauth2</h4><h4 id="6-2、shiro"><a href="#6-2、shiro" class="headerlink" title="6.2、shiro"></a>6.2、shiro</h4><h4 id="6-3、spring-security"><a href="#6-3、spring-security" class="headerlink" title="6.3、spring security"></a>6.3、spring security</h4><h3 id="7、单点登录"><a href="#7、单点登录" class="headerlink" title="7、单点登录"></a>7、单点登录</h3><h3 id="8、web容器"><a href="#8、web容器" class="headerlink" title="8、web容器"></a>8、web容器</h3><h4 id="8-1、tomcat"><a href="#8-1、tomcat" class="headerlink" title="8.1、tomcat"></a>8.1、tomcat</h4><h4 id="8-2、nginx"><a href="#8-2、nginx" class="headerlink" title="8.2、nginx"></a>8.2、nginx</h4><h3 id="9、前台"><a href="#9、前台" class="headerlink" title="9、前台"></a>9、前台</h3><h4 id="9-1、html-css"><a href="#9-1、html-css" class="headerlink" title="9.1、html/css"></a>9.1、html/css</h4><h5 id="9-1-1、html5"><a href="#9-1-1、html5" class="headerlink" title="9.1.1、html5"></a>9.1.1、html5</h5><h5 id="9-1-2、css3"><a href="#9-1-2、css3" class="headerlink" title="9.1.2、css3"></a>9.1.2、css3</h5><h4 id="9-2、jsp"><a href="#9-2、jsp" class="headerlink" title="9.2、jsp"></a>9.2、jsp</h4><h5 id="9-2-1、jstl"><a href="#9-2-1、jstl" class="headerlink" title="9.2.1、jstl"></a>9.2.1、jstl</h5><h5 id="9-2-2、自定义标签"><a href="#9-2-2、自定义标签" class="headerlink" title="9.2.2、自定义标签"></a>9.2.2、自定义标签</h5><h4 id="9-3、js"><a href="#9-3、js" class="headerlink" title="9.3、js"></a>9.3、js</h4><h5 id="9-3-1、jquery"><a href="#9-3-1、jquery" class="headerlink" title="9.3.1、jquery"></a>9.3.1、jquery</h5><h5 id="9-3-2、es6"><a href="#9-3-2、es6" class="headerlink" title="9.3.2、es6"></a>9.3.2、es6</h5><h4 id="9-4、前台门框架"><a href="#9-4、前台门框架" class="headerlink" title="9.4、前台门框架"></a>9.4、前台门框架</h4><h5 id="9-4-1、vuejs"><a href="#9-4-1、vuejs" class="headerlink" title="9.4.1、vuejs"></a>9.4.1、vuejs</h5><h5 id="9-4-2、webpack"><a href="#9-4-2、webpack" class="headerlink" title="9.4.2、webpack"></a>9.4.2、webpack</h5><h2 id="三、服务器学习"><a href="#三、服务器学习" class="headerlink" title="三、服务器学习"></a>三、服务器学习</h2><h3 id="1、linux命令"><a href="#1、linux命令" class="headerlink" title="1、linux命令"></a>1、linux命令</h3><h3 id="2、docker"><a href="#2、docker" class="headerlink" title="2、docker"></a>2、docker</h3><h2 id="四、设计模式"><a href="#四、设计模式" class="headerlink" title="四、设计模式"></a>四、设计模式</h2><h3 id="1、单例模式"><a href="#1、单例模式" class="headerlink" title="1、单例模式"></a>1、单例模式</h3><h3 id="2、工厂模式"><a href="#2、工厂模式" class="headerlink" title="2、工厂模式"></a>2、工厂模式</h3><h3 id="3、代理模式"><a href="#3、代理模式" class="headerlink" title="3、代理模式"></a>3、代理模式</h3><h2 id="五、java-虚拟机"><a href="#五、java-虚拟机" class="headerlink" title="五、java 虚拟机"></a>五、java 虚拟机</h2><h2 id="六、工具"><a href="#六、工具" class="headerlink" title="六、工具"></a>六、工具</h2><h3 id="1、git"><a href="#1、git" class="headerlink" title="1、git"></a>1、git</h3><h3 id="2、svn"><a href="#2、svn" class="headerlink" title="2、svn"></a>2、svn</h3><h3 id="3、maven"><a href="#3、maven" class="headerlink" title="3、maven"></a>3、maven</h3><h2 id="七、工具类"><a href="#七、工具类" class="headerlink" title="七、工具类"></a>七、工具类</h2><h3 id="1、guava"><a href="#1、guava" class="headerlink" title="1、guava"></a>1、guava</h3><h3 id="2、apache-common-lang"><a href="#2、apache-common-lang" class="headerlink" title="2、apache common lang"></a>2、apache common lang</h3><h3 id="3、json"><a href="#3、json" class="headerlink" title="3、json"></a>3、json</h3><h4 id="3-1、fastjson"><a href="#3-1、fastjson" class="headerlink" title="3.1、fastjson"></a>3.1、fastjson</h4><h4 id="3-2、jackson"><a href="#3-2、jackson" class="headerlink" title="3.2、jackson"></a>3.2、jackson</h4><h4 id="3-3、gson"><a href="#3-3、gson" class="headerlink" title="3.3、gson"></a>3.3、gson</h4><h2 id="八、数据"><a href="#八、数据" class="headerlink" title="八、数据"></a>八、数据</h2><h3 id="1、数据库"><a href="#1、数据库" class="headerlink" title="1、数据库"></a>1、数据库</h3><h4 id="1-1、mysql"><a href="#1-1、mysql" class="headerlink" title="1.1、mysql"></a>1.1、mysql</h4><h4 id="1-2、Oracle"><a href="#1-2、Oracle" class="headerlink" title="1.2、Oracle"></a>1.2、Oracle</h4><h4 id="1-3、mongodb"><a href="#1-3、mongodb" class="headerlink" title="1.3、mongodb"></a>1.3、mongodb</h4><h4 id="1-4、redis"><a href="#1-4、redis" class="headerlink" title="1.4、redis"></a>1.4、redis</h4><h3 id="2、搜索引擎"><a href="#2、搜索引擎" class="headerlink" title="2、搜索引擎"></a>2、搜索引擎</h3><h4 id="2-1、solr"><a href="#2-1、solr" class="headerlink" title="2.1、solr"></a>2.1、solr</h4><h2 id="九、nodejs"><a href="#九、nodejs" class="headerlink" title="九、nodejs"></a>九、nodejs</h2><h3 id="1、express-koa"><a href="#1、express-koa" class="headerlink" title="1、express/koa"></a>1、express/koa</h3><h3 id="2、npm"><a href="#2、npm" class="headerlink" title="2、npm"></a>2、npm</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/blog/2019/05/14/2019-05-14-java%E7%9F%A5%E8%AF%86%E7%82%B9%E6%95%B4%E7%90%86/">展开全文 >></a>
         </p>
       
 
