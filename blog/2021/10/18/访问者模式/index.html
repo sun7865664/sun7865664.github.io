@@ -16,9 +16,11 @@
 <meta property="og:description" content="访问者模式 访问者模式的设计初衷是为了将稳定的数据结构和对数据结构的变化多端的操作解耦,可以让设计者针对同一套数据结构自由地设计操作集合。访问者模式的结构图如下，    访问者模式一般有抽象访问者、具体访问者、抽象节点元素、机构对象和客户端几种角色   抽象访问者（Visitor）：声明所有访问者需要的接口。 具体访问者（ConcreteVisitor）:实现抽象访问者声明的接口。 抽象接待元素（">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://sun7865664.github.io/blog/2021/10/18/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/image-20210818092730266.png">
-<meta property="article:published_time" content="2021-10-18T07:14:00.463Z">
-<meta property="article:modified_time" content="2021-10-18T08:02:17.477Z">
+<meta property="article:published_time" content="2021-10-18T07:53:41.000Z">
+<meta property="article:modified_time" content="2024-05-15T01:30:13.575Z">
 <meta property="article:author" content="孙龙">
+<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="访问者模式">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://sun7865664.github.io/blog/2021/10/18/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/image-20210818092730266.png">
   
@@ -161,7 +163,7 @@
 
         
         <a href="/blog/2021/10/18/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/" class="archive-article-date">
-  	<time datetime="2021-10-18T07:14:00.463Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-18</time>
+  	<time datetime="2021-10-18T07:53:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-18</time>
 </a>
         
       </header>
@@ -171,7 +173,7 @@
         <h4 id="访问者模式"><a href="#访问者模式" class="headerlink" title="访问者模式"></a>访问者模式</h4><blockquote>
 <p>访问者模式的设计初衷是为了将稳定的数据结构和对数据结构的变化多端的操作解耦,可以让设计者针对同一套数据结构自由地设计操作集合。访问者模式的结构图如下，</p>
 </blockquote>
-<p><img src="/blog/2021/10/18/%E8%AE%BF%E9%97%AE%E8%80%85%E6%A8%A1%E5%BC%8F/image-20210818092730266.png" alt="image-20210818092730266"></p>
+<p><img src="./image-20210818092730266.png" alt="image-20210818092730266"></p>
 <blockquote>
 <p>访问者模式一般有抽象访问者、具体访问者、抽象节点元素、机构对象和客户端几种角色</p>
 </blockquote>
@@ -212,6 +214,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">设计模式</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">访问者模式</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -276,18 +293,18 @@
   
 <nav id="article-nav">
   
-    <a href="/blog/2021/10/18/iptables%E8%AE%BE%E7%BD%AE/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/blog/2021/10/18/%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          iptables设置
+          编码问题
         
       </div>
     </a>
   
   
-    <a href="/blog/2021/10/18/%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">编码问题</div>
+    <a href="/blog/2021/06/03/mysql%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6%E9%85%8D%E7%BD%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql主从复制配置</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -366,7 +383,7 @@ gitment.render('gitment-ctn')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 孙龙
+    		&copy; 2024 孙龙
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -449,6 +466,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">fdisk</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">scp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">kafka</a>
               </li>
              
@@ -477,22 +510,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">mysql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">fdisk</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">scp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">docker</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">java基础</a>
               </li>
              
@@ -505,7 +522,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">AppSmith</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">低代码平台</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">开发框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主从复制</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">centos</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ftp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">oracle漏洞</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">iptables</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">访问者模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">编码</a>
               </li>
             
             <div class="clearfix"></div>
